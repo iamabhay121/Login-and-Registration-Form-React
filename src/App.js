@@ -12,13 +12,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/">
-          {isLoggedIn ? <Navigate to="/dashboard" /> : <Login setIsLoggedIn={setIsLoggedIn} />}
-        </Route>
-        <Route path="/dashboard">
-          {isLoggedIn ? <Dashboard /> : <Navigate to="/" />}
-        </Route>
-        <Route path="/register" element={<Registration />} />
+        <Route  path='/' element={isLoggedIn ? <Navigate to="/dashboard" /> : <Login setIsLoggedIn={setIsLoggedIn} />} />
+        <Route  path='/dashboard' element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />} />
+        <Route  path='/register' element={<Registration />} />
       </Routes>
     </Router>
   );
